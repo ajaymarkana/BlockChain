@@ -1,4 +1,5 @@
-pragma solidity ^0.4.17;
+//SPDX-License-Identifier: MIT
+pragma solidity >= 0.5.0 < 0.7.0;
 
 contract Ballot {
 
@@ -11,7 +12,7 @@ contract Ballot {
 
     //modifer
     modifier onlyOwner () {
-      require(msg.sender == chairperson);
+      require(msg.sender == chairperson,"Only owner has rights");
       _;
     }
 
@@ -23,7 +24,7 @@ contract Ballot {
     uint[4] public proposals;
 
     // Create a new ballot with 4 different proposals.
-    function Ballot() public {
+    constructor() public {
         chairperson = msg.sender;
         voters[chairperson].weight = 2;
     }
@@ -31,7 +32,7 @@ contract Ballot {
     /// Give $(toVoter) the right to vote on this ballot.
     /// May only be called by $(chairperson).
     function register(address toVoter) public onlyOwner{
-        if(voters[toVoter].weight != 0) revert();
+        if(voters[toVoter].weight != 0) revert("only owner has rights");
         voters[toVoter].weight = 1;
         voters[toVoter].voted = false;
     }
@@ -39,13 +40,13 @@ contract Ballot {
     /// Give a single vote to proposal $(toProposal).
     function vote(uint8 toProposal) public {
         Voter storage sender = voters[msg.sender];
-        if (sender.voted || toProposal >= 4 || sender.weight == 0) revert();
+        if (sender.voted || toProposal >= 4 || sender.weight == 0) revert("you are not eligible");
         sender.voted = true;
         sender.vote = toProposal;
         proposals[toProposal] += sender.weight;
     }
 
-    function winningProposal() public constant returns (uint8 _winningProposal) {
+    function winningProposal() public view returns (uint8 _winningProposal) {
         uint256 winningVoteCount = 0;
         for (uint8 prop = 0; prop < 4; prop++)
             if (proposals[prop] > winningVoteCount) {
@@ -54,7 +55,7 @@ contract Ballot {
             }
     }
 
-    function getCount() public constant returns (uint[4]) {
+    function getCount() public view returns (uint[4] memory) {
         return proposals;
     }
 }
