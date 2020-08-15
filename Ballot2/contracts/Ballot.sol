@@ -1,6 +1,5 @@
 //SPDX-License-Identifier: MIT
-pragma solidity >= 0.5.0 < 0.7.0;
-
+pragma solidity >0.5.2;
 contract Ballot {
 
     struct Voter {
@@ -24,7 +23,7 @@ contract Ballot {
     uint[4] public proposals;
 
     // Create a new ballot with 4 different proposals.
-    constructor() public {
+    constructor(){
         chairperson = msg.sender;
         voters[chairperson].weight = 2;
     }

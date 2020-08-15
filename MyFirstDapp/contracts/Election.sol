@@ -1,6 +1,5 @@
 //SPDX-License-Identifier: MIT
-pragma solidity >= 0.5.0 < 0.7.0;
-
+pragma solidity >0.5.2;
 contract Election {
   struct Candidate{
     uint id;
@@ -15,11 +14,11 @@ contract Election {
   event votedEvent(
     uint indexed _candidateId
   );
-  constructor() public{
+  constructor() public {
     addCandidate("Candidate 1");
     addCandidate("Candidate 2");
   }
-
+      
   function addCandidate(string memory _name) private{
     candidatesCount ++;
     candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);

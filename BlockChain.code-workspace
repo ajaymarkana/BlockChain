@@ -2,6 +2,14 @@
     "folders": [
         {
             "path": "."
+        },
+        {
+            "path": "../JavaScript"
         }
-    ]
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "JavaScript",
+        "editor.autoClosingBrackets": "always",
+        "html.format.unformatted": "true"
+    }
 }
