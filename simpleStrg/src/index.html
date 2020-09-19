@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />     
+    <title>Simple Storage</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+    crossorigin="anonymous">
+
+    <script src="web3.js"></script>
+    <script src="bundle.js"></script>
+  </head>
+  <body>
+   <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Simple storage</h1>
+          <form id="setData">
+            <div class="form-group">
+              <label for="setDataInput">Set data (number)</label>
+              <input id="setDataInput" type="number" class="form-control"></input>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <div>Data: <span id="data"></span></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
