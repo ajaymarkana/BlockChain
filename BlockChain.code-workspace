@@ -10,7 +10,9 @@
     "settings": {
         "liveServer.settings.multiRootWorkspaceName": "JavaScript",
         "editor.autoClosingBrackets": "always",
-        "html.format.unformatted": "true"
+        "html.format.unformatted": "true",
+        "python.dataScience.jupyterServerURI": "local",
+        "git.ignoreLimitWarning": true
     },
     "launch": {
         "version": "0.2.0",
