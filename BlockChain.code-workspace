@@ -4,11 +4,11 @@
             "path": "."
         },
         {
-            "path": "../ReactJS"
+            "path": "../Mern"
         }
     ],
     "settings": {
-        "liveServer.settings.multiRootWorkspaceName": "JavaScript",
+        "liveServer.settings.multiRootWorkspaceName": "javaScript",
         "editor.autoClosingBrackets": "always",
         "html.format.unformatted": "true",
         "python.dataScience.jupyterServerURI": "local",
