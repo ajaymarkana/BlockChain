@@ -8,7 +8,7 @@
         }
     ],
     "settings": {
-        "liveServer.settings.multiRootWorkspaceName": "javaScript",
+        "liveServer.settings.multiRootWorkspaceName": "Mern",
         "editor.autoClosingBrackets": "always",
         "html.format.unformatted": "true",
         "python.dataScience.jupyterServerURI": "local",
